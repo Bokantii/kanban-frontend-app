@@ -1,6 +1,7 @@
 import React, { useState, useContext, useRef } from "react";
 import classes from "./Board.module.scss";
-import logoDark from "../../assets/logo-dark.svg";
+// import logoDark from "../../assets/logo-dark.svg";
+import logoDark from "../../assets/logo-no-background.svg";
 import IconVerticalEllipses from "../Icons/IconVerticalEllipses";
 import AddNewTask from "../AddNewTask/AddNewTask";
 import EditTask from "../EditTask/EditTask";

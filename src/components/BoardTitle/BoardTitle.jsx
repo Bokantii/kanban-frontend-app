@@ -1,18 +1,33 @@
-import React from "react";
+import React, { useState } from "react";
 import classes from "./BoardTitle.module.scss";
 import IconBoard from "../Icons/IconBoard";
-import { useState } from "react";
-const BoardTitle = ({ title,isSelected,onSelect}) => {
-  
-  let iconBoardColor = isSelected ? "#f4f7fd" :"#828FA3";
+
+const BoardTitle = ({ title, isSelected, onSelect }) => {
+  const [isHovered, setIsHovered] = useState(false);
+
+  // const iconBoardColor = isSelected && isHovered ? "#635fc7" : "#828FA3";
+  let iconBoardColor;
+  if (isSelected && isHovered) {
+    iconBoardColor = "#635fc7";
+  } else if (isSelected) {
+    iconBoardColor = "#fff";
+  } else {
+    iconBoardColor = "#828FA3";
+  }
   const className = isSelected
     ? `${classes.board} ${classes.board_selected}`
     : classes.board;
-  function changeIconColor(){
-    iconBoardColor="#828FA3"
-  }
+
+  const handleMouseEnter = () => setIsHovered(true);
+  const handleMouseLeave = () => setIsHovered(false);
+
   return (
-    <li className={className} onClick={onSelect}>
+    <li
+      className={className}
+      onClick={onSelect}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+    >
       <span className={classes.boardItem}>
         <IconBoard fill={iconBoardColor} />
         <span>{title}</span>
