@@ -52,11 +52,11 @@ function App() {
   return (
     <>
 
-      {/* <TranslateProvider>
+      <TranslateProvider>
         <BoardsAll />
         <SideBar />
-      </TranslateProvider> */}
-      <AddNewTask/>
+      </TranslateProvider>
+      {/* <AddNewTask/> */}
     </>
    
   );
