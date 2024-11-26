@@ -9,6 +9,22 @@
   flex-direction: column;
   padding: 1.5rem;
   border-radius: 8px;
+  &.add_board_dark{
+    background-color: $slate_gray;
+    h1{
+      color:#fff;
+    }
+    label{
+      color:#fff;
+    }
+    input{
+      background-color: $slate_gray;
+      color:#fff;
+      border:1px solid $muted_blue !important;
+    }
+
+
+  }
 
   form {
     width: 100%;
@@ -41,6 +57,9 @@
     .add_new_column {
       background-color: $pale_blue;
       color: $vibrant_indigo;
+      &.add_new_column_dark{
+        background-color: #fff;
+      }
     
      
     }

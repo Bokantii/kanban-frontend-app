@@ -2,10 +2,194 @@
 
 .view_task {
   width: 33.33%;
-  height: 65.92%;
+  min-height: 65.92%;
   background-color: $off_white;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
+  padding: 2rem;
+  border-radius: 5px;
+  &.view_task_dark{
+    background-color: $slate_gray;  
+  }
+
+  .subtask_heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 0.8rem;
+    position: relative;
+    .edit_task_menu {
+      position: absolute;
+      border: none;
+      right: 0;
+      background-color: $off_white;
+      top: 80%;
+      right: -20%;
+      width: 50%;
+      padding: 1rem;
+      border-radius: 5px;
+      display: none;
+      &.edit_task_menu_dark{
+        background-color: $charcoal_black;
+      }
+      p {
+        font-size: 0.8rem;
+        cursor: pointer;
+      }
+      .edit_task {
+        color: $muted_blue;
+      }
+      .delete_task {
+        color: $coral_red;
+        margin-top: 0.7rem;
+      }
+    }
+    .subtask {
+      width: 90%;
+      font-weight: 600;
+      &.subtask_dark{
+        color:#fff;
+      }
+    }
+  }
+  .ellipsisVertical {
+    cursor: pointer;
+    color: $muted_blue;
+  }
+  .subtask_description {
+    margin-top: 1rem;
+    font-size: 0.85rem;
+    color: $muted_blue;
+    font-weight: 300;
+  }
+  .subtasks {
+    width: 100%;
+    &.subtasks_dark{
+      h3{
+        color:#fff;
+      }
+    }
+    .subtasks_heading {
+      font-size: 0.9rem;
+      margin-top: 1rem;
+      color: $muted_blue;
+    }
+    .subtasks_todoList {
+      width: 100%;
+      .subtask_item {
+        border: none;
+        border-radius: 5px;
+        background-color: $pale_blue;
+        display: flex;
+        flex-shrink: 0;
+        gap: 0.7rem;
+        padding: 0.4rem;
+        margin-top: 1rem;
+        transition: 0.3s ease background-color;
+        cursor: pointer;
+        &.subtask_item_dark{
+          background-color:$charcoal_black;
+          input[type="checkbox"]{
+            background-color: $slate_gray;
+            border:1px solid $muted_blue;
+          }
+        }
+        &:hover {
+          background-color: $soft_lavender;
+        }
+        label {
+          font-size: 0.7rem;
+          text-align: left;
+        }
+
+        input[type="checkbox"] {
+          appearance: none;
+          min-width: 1.5rem;
+          height: 1.5rem;
+
+          border: 1px solid $pale_blue;
+          border-radius: 0.2rem;
+          background-color: $off_white;
+          position: relative;
+          cursor: pointer;
+          outline: none;
+          transition: background-color 0.3s ease, border-color 0.3s ease;
+
+          &:checked {
+            background-color: $vibrant_indigo;
+            border-color: $vibrant_indigo;
+
+            &::before {
+              content: "✓";
+              font-size: 1rem;
+              color: $off_white;
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+              font-weight: bold;
+            }
+          }
+        }
+        .undone {
+          color: $charcoal_black;
+          font-weight: 600;
+          &.undone_dark{
+            color:#fff;
+          }
+        }
+        .done {
+          font-weight: 400;
+          text-decoration: line-through;
+          color: $muted_blue;
+        }
+      }
+    }
+  }
+  .task_status {
+    &.task_status_dark{
+      .status{
+        background-color: $slate_gray;
+        border: 1px solid $muted_blue;
+        color:#fff;
+      }
+      p{
+        color:#fff;
+      }
+    }
+    p {
+      font-size: 0.8rem;
+      color: $muted_blue;
+      text-transform: capitalize;
+    }
+
+    margin-top: 0.8rem;
+    select {
+      width: 100%;
+      
+      
+      padding: 1rem;
+      background-color: #fff;
+      border: 1px solid $pale_blue;
+      margin-top: 0.4rem;
+      border-radius: 5px;
+      outline: none;
+      cursor: pointer;
+      transition: .3s ease border,.3s ease color;
+      &:hover{
+        border: 1px solid $vibrant_indigo;
+        color: $vibrant_indigo;
+      }
+      option {
+        background-color: #fff;
+      }
+    }
+    input {
+      width: 100%;
+      padding: 0.7rem;
+      border-radius: 0.3rem;
+      border: 1px solid $pale_blue;
+      margin-top: 1rem;
+    }
+  }
 }
-     

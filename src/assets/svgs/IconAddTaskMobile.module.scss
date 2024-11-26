@@ -1,0 +1,24 @@
+@import "./../../Main.scss";
+.addTaskMobile {
+  background-color: $vibrant_indigo;
+  border-radius: 25px;
+  border: none;
+  width: 60px;
+  padding: .6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
+  transition: .3s ease background-color;
+  display: none;
+  &:hover{
+    background-color: $soft_lavender;
+  }
+  @media screen and (max-width:600px){
+      display: block;
+  }
+  &.disabled{
+    background-color: red;
+  }
+}

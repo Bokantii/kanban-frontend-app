@@ -6,18 +6,23 @@ import IconHideSideBar from "../Icons/IconHideSideBar";
 import IconBoard from "../Icons/IconBoard";
 import BoardTitle from "../BoardTitle/BoardTitle";
 import logoDark from "../../assets/logo-dark.svg";
+import logoLight from '../../assets/logo-light.svg';
 import IconShowSideBar from "../Icons/IconShowSideBar";
 import AddBoardModal from "../AddBoard/AddBoardModal";
+import { TranslateProvider } from "../../store/boardTranslate-context";
 import { TranslateContext } from "../../store/boardTranslate-context";
-
+import Slider from "./Slider/Slider";
 const SideBar = () => {
-  const [sideBarIsHidden, setSideBarIsHidden] = useState(false);
+  const [sideBarIsHidden, setSideBarIsHidden] = useState(true);
   const [addNewBoard, setAddNewBoard] = useState(false);
   const [selectedBoardIndex, setSelectedBoardIndex] = useState(null);
 
   const boardTitleInput = useRef();
 
-  const { createNewBoard, selectBoard, boards } = useContext(TranslateContext);
+  const { createNewBoard, selectBoard, boards, toggleTranslateX } =
+    useContext(TranslateContext);
+  console.log(boards);
+  const sideBarDimensions = { width: 20.83, height: 50 };
 
   const sideBarClass = sideBarIsHidden
     ? `${classes.side_bar} ${classes.side_bar_hidden}`
@@ -25,10 +30,12 @@ const SideBar = () => {
 
   function hideSideBar() {
     setSideBarIsHidden(true);
+    toggleTranslateX(false);
   }
 
   function showSideBar() {
     setSideBarIsHidden(false);
+    toggleTranslateX(true);
   }
 
   function addBoard() {
@@ -52,11 +59,13 @@ const SideBar = () => {
           boardTitle={boardTitleInput}
         />
       )}
-      <section className={sideBarClass}>
+      <section className={`${sideBarClass} ${classes.side_bar_dark}` }>
         <div className={classes.logo}>
-          <img src={logoDark} alt="logo_light" />
+          <img src={logoLight} alt="logo_light" />
         </div>
-        <aside className={classes.side_bar_content}>
+        <aside
+          className={`${classes.side_bar_content} ${classes.side_bar_content_dark}`}
+        >
           <section className={classes.all_boards}>
             <span className={classes.all_boards_heading}>
               ALL BOARDS ({boards.length})
@@ -85,13 +94,14 @@ const SideBar = () => {
             </ul>
           </section>
           <section className={classes.controls}>
-            <section className={classes.screen_mode}>
+            <section className={`${classes.screen_mode} ${classes.screen_mode_dark}`}>
               <section className={classes.screen_mode_content}>
                 <IconLightTheme />
-                <label className={classes.slider_label}>
+                {/* <label className={classes.slider_label}>
                   <input type="checkbox" />
                   <span className={classes.slider}></span>
-                </label>
+                </label> */}
+                <Slider />
                 <IconDarkTheme />
               </section>
             </section>
@@ -102,6 +112,7 @@ const SideBar = () => {
           </span>
         </aside>
       </section>
+
       <div className={classes.showSideBar}>
         <IconShowSideBar showSideBar={showSideBar} />
       </div>

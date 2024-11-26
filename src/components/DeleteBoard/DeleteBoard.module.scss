@@ -2,9 +2,56 @@
 
 .delete_board {
   width: 33.33%;
-  height: 65.92%;
+  height: 22.36%;
   background-color: $off_white;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1rem;
+  border-radius: 5px;
+  &.delete_board_dark{
+    background-color: $slate_gray;
+  }
+  h3{
+    text-transform: capitalize;
+    color:$coral_red;
+    font-size: .9rem;
+  }
+  p{
+    font-size: .7rem;
+    color:$muted_blue;
+  }
+  .delete_action{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    button{
+      width: 47%;
+      padding: .7rem;
+      border-radius: 25px;
+      border: none;
+      cursor:pointer;
+      text-transform: capitalize;
+      
+    }
+    .delete{
+      background: $coral_red;
+      color:#fff;
+      transition: .3s background-color ease;
+      &:hover{
+        background-color: $light_pink;
+      }
+    }
+    .cancel{
+      background-color: $pale_blue;
+      color:$vibrant_indigo;
+      transition: .3s background-color ease;
+      &.cancel_dark{
+        background-color: #fff;
+      }
+      &:hover{
+        background-color: $soft_lavender;
+      }
+    }
+  }
 }

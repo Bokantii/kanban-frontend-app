@@ -1,10 +1,29 @@
-@import '../../Main.scss';
+@import "../../Main.scss";
 
-.card{
-    border: 1px solid red;
-    width: 100%;
-    padding: 0.8rem 0.4rem;
-    border-radius: 5px;
-    background-color:$pure_white;
-    cursor: pointer;
+.card {
+  &.card_dark{
+    background-color: $slate_gray;
+  }
+  width: 100%;
+  padding: 1.3rem 0.4rem;
+  border-radius: 5px;
+  background-color: $pure_white;
+  cursor: pointer;
+  margin-top: 1rem;
+  -webkit-box-shadow: -1px 1px 8px -4px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: -1px 1px 8px -4px rgba(0, 0, 0, 0.75);
+  box-shadow: -1px 1px 8px -4px rgba(0, 0, 0, 0.75);
+  .task {
+    font-size: 1rem;
+    transition: .3s ease color;
+    &:hover{
+        color:$vibrant_indigo;
+    }
+  }
+  .subTask {
+    font-size: 0.7rem;
+    margin-top: 0.3rem;
+    font-weight: 700;
+    color:$muted_blue;
+  }
 }

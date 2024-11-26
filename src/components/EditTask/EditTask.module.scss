@@ -1,10 +1,159 @@
 @import "../../Main.scss";
 
+// .edit_task {
+//   width: 33.33%;
+//   height: 65.92%;
+//   background-color: $off_white;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+// }
+
+@import "../../Main.scss";
+
 .edit_task {
   width: 33.33%;
-  height: 65.92%;
-  background-color: $off_white;
+  height: 90%;
+  // background-color: $off_white;
+  background-color: #fff;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
+  padding: 2rem;
+  // justify-content: space-between;
+  // align-items: center;
+  z-index: 10000;
+  border-radius: 10px;
+  &.edit_task_dark {
+    background-color: $slate_gray;
+    p,
+    h3 {
+      color: #fff;
+    }
+  }
+  input {
+    outline: none !important;
+  }
+  p {
+    color: $muted_blue;
+    font-size: 0.8rem;
+  }
+  .inputSection {
+    // border:1px solid red;
+    &.inputSection_dark {
+      input,
+      textarea {
+        background-color: $slate_gray;
+        border: 1px solid $muted_blue;
+        color: #fff;
+      }
+    }
+    margin-top: 0.8rem;
+
+    select {
+      width: 100%;
+      padding: 1rem;
+      background-color: #fff;
+      border: 1px solid $pale_blue;
+    }
+    input {
+      width: 100%;
+      padding: 0.7rem;
+      border-radius: 0.3rem;
+      border: 1px solid $pale_blue;
+      margin-top: 1rem;
+    }
+    .desc_textarea {
+      width: 100%;
+      outline: none;
+      margin-top: 0.7rem;
+      padding: 0.5rem 0.5rem 1rem;
+      border: 1px solid $pale_blue;
+      border-radius: 0.3rem;
+      font-size: 0.8rem;
+      resize: none;
+    }
+    .desc_textarea::placeholder {
+      color: $muted_blue;
+      opacity: 0.3;
+    }
+    .status {
+      margin-top: 0.5rem;
+      &.status_dark {
+        background-color: $slate_gray;
+        color:#fff;
+        border: 1px solid $muted_blue;
+      }
+      option[value="todo"] {
+        background: yellow;
+        color: pink;
+      }
+      option:hover {
+        background-color: blue;
+        color: white;
+      }
+    }
+  }
+  .subtasks_section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 1.2rem;
+    input {
+      border-radius: 5px !important;
+    }
+
+    // border: 1px solid red;
+    &.subtasks_section_dark {
+      input {
+        background-color: $slate_gray;
+        color: #fff;
+        border: 1px solid $muted_blue !important;
+      }
+    }
+    .board_column_names {
+      margin-top: 0.6rem;
+      div {
+        width: 100%;
+        // border:1px solid blue;
+        margin-top: 0.4rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .xMark {
+          cursor: pointer;
+          color: $muted_blue;
+          font-size: 1rem;
+          font-weight: 800;
+        }
+        input {
+          width: 90%;
+          padding: 0.7rem;
+          border: 1px solid $pale_blue;
+        }
+      }
+    }
+  }
+  .add_new_column,
+  .save_changes {
+    margin-top: 1rem;
+    border-radius: 20px;
+    padding: 0.7rem;
+    border: none;
+    text-transform: capitalize;
+    background-color: $pale_blue;
+    color: $vibrant_indigo;
+    cursor: pointer;
+    &.add_new_column_dark {
+      background-color: #fff;
+    }
+  }
+  .save_changes {
+    background-color: $vibrant_indigo;
+    color: #fff;
+    cursor: pointer;
+  }
 }
+//Dark Mode
+// .edit_task_dark{
+//   background-color: black;
+// }

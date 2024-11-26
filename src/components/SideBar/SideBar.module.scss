@@ -14,6 +14,9 @@
   border-top-right-radius: 50px;
   border-bottom-right-radius: 50px;
   transition: 0.3s background-color ease;
+  @media screen and (max-width: 600px) {
+    display: none;
+  }
   &:hover {
     background-color: $soft_lavender;
   }
@@ -34,14 +37,32 @@
   color: $muted_blue;
   padding: 1.5rem;
   height: 100vh;
-  z-index: 155000;
-  background-color: white;
+  z-index: 1000;
   box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.58);
   transition: 0.7s transform ease;
   position: absolute;
   top: 0;
   left: 0;
   padding-bottom: 4rem;
+  @media screen and (max-width: 600px) {
+    display: none;
+  }
+  @media screen and (max-width:1187px){
+    min-width: 30%;
+  }
+  @media screen and (max-width:728px){
+    min-width: 32%;
+  }
+  @media screen and (max-width:900px){
+    min-width: 33.98%;
+  }
+  
+  &.side_bar_dark{
+    background-color: $slate_gray !important;
+    @media screen and (max-width: 600px) {
+      display: none;
+    }
+  }
   .side_bar_content {
     display: flex;
     flex-direction: column;
@@ -49,11 +70,15 @@
     width: 100%;
     height: 100%;
     margin-top: 3rem;
+    &.side_bar_content_dark {
+      background-color: $slate_gray;
+    }
 
     .all_boards {
       .all_boards_heading {
         text-transform: uppercase;
         font-size: $heading_S;
+       
       }
       .boards {
         display: flex;
@@ -119,20 +144,22 @@
         border: 1px solid green;
       }
     }
+    
     .screen_mode {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      background-color: $pale_blue;
       padding: 0.4rem 0;
       margin-bottom: 3rem;
-      border: 4px dotted magenta;
+      border-radius: 4px;
+      &.screen_mode_dark{
+        background-color: $charcoal_black !important;
+      }
       .screen_mode_content {
         width: 100%;
         display: flex;
         justify-content: space-between;
         align-items: center;
-        border: 2px solid green;
         
       }
     }
@@ -178,3 +205,6 @@
     }
   }
 }
+
+//====================DARK MODE========================
+

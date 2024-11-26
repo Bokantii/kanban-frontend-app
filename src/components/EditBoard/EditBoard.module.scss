@@ -2,9 +2,108 @@
 
 .edit_board {
   width: 33.33%;
-  height: 65.92%;
-  background-color: $off_white;
+  height: 80%;
+  // background-color: $off_white;
+  background-color: #fff;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
+  padding: 2rem;
+  // justify-content: space-between;
+  // align-items: center;
+  z-index: 10000;
+  border-radius: 10px;
+  &.edit_board_dark{
+    background-color: $slate_gray;
+    color: #fff;
+  }
+  input {
+    outline: none !important;
+  }
+  p {
+    color: $muted_blue;
+    font-size: 0.8rem;
+  }
+  .board_name {
+    &.board_name_dark{
+      p{
+        color:#fff;
+      }
+      input{
+        background-color: $slate_gray;
+        border: 1px solid $muted_blue;
+        color: #fff;
+      }
+     
+    }
+
+    margin-top: 1.3rem;
+    input {
+      width: 100%;
+      padding: 0.7rem;
+      border-radius: 0.3rem;
+      border: 1px solid $pale_blue;
+      margin-top: 1rem;
+    }
+  }
+  .board_columns {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 1.2rem;
+    // border: 1px solid red;
+    &.board_columns_dark{
+      p{color:#fff}
+      div{
+        input{
+          background-color: $slate_gray;
+          border: 1px solid $muted_blue !important;
+          color:#fff;
+        }
+      }
+    }
+    .board_column_names {
+      margin-top: 0.6rem;
+      div {
+        width: 100%;
+        // border:1px solid blue;
+        margin-top: 0.4rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        
+        .xMark {
+          cursor: pointer;
+          color: $muted_blue;
+          font-size: 1rem;
+          font-weight: 800;
+        }
+        input {
+          width: 90%;
+          padding: 0.7rem;
+          border: 1px solid $pale_blue;
+          border-radius: 5px;
+        }
+      }
+    }
+  }
+  .add_new_column,
+  .save_changes {
+    margin-top: 1rem;
+    border-radius: 20px;
+    padding: 1rem;
+    border: none;
+    text-transform: capitalize;
+    background-color: $pale_blue;
+    color: $vibrant_indigo;
+    cursor: pointer;
+    &.add_new_column_dark{
+      background-color: #fff;
+    }
+  }
+  .save_changes {
+    background-color: $vibrant_indigo;
+    color: #fff;
+    cursor: pointer;
+   
+  }
 }

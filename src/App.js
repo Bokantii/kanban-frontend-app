@@ -2,10 +2,17 @@
 import BoardsAll from "./components/BoardsAll/BoardsAll";
 import { useState, useRef } from "react";
 import Modal from "./components/Modal/Modal";
+import AddNewTask from "./components/AddNewTask/AddNewTask";
 import { ModalContext } from "./store/modal-context";
 import SideBar from "./components/SideBar/SideBar";
 import { useContext } from "react";
-import { TranslateContext } from "./store/boardTranslate-context";
+import { TranslateProvider } from "./store/boardTranslate-context";
+import ViewTask from "./components/ViewTask/ViewTask";
+import EditBoard from "./components/EditBoard/EditBoard";
+import DeleteBoard from "./components/DeleteBoard/DeleteBoard";
+import EditTask from "./components/EditTask/EditTask";
+import AddBoardModal from "./components/AddBoard/AddBoardModal";
+// import 'bootstrap/dist/css/bootstrap.min.css';
 function App() {
   const [enteredBoardName, setEnteredBoardName] = useState("");
   const [enteredTaskName, setEnteredTaskName] = useState("");
@@ -44,15 +51,14 @@ function App() {
 
   return (
     <>
-      
-        <TranslateContext.Provider
-          value={{ createNewBoard, selectBoard, activeBoardIndex, boards }}
-        >
-          <BoardsAll />
-          <SideBar />
-        </TranslateContext.Provider>
-     
+
+      {/* <TranslateProvider>
+        <BoardsAll />
+        <SideBar />
+      </TranslateProvider> */}
+      <AddNewTask/>
     </>
+   
   );
 }
 

@@ -1,11 +1,152 @@
-@import '../../Main.scss';
+@import "../../Main.scss";
 
-.add_new_task{
-    width:33.33%;
-    height: 65.92%;
-    background-color:$off_white;
+.add_new_task {
+  width: 33.33%;
+  height: 90%;
+  // background-color: $off_white;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  // justify-content: space-between;
+  // align-items: center;
+  z-index: 10000;
+  border-radius: 10px;
+  input::placeholder{
+    color: $muted_blue !important;
+    opacity: 0.3 !important;
+  }
+  @media screen and (max-width:900px){
+    width: 62.5%;
+    height: 65.9%;
+  }
+  
+  @media screen and (max-width:600px){
+    width: 91.2%;
+    height: 67.9%;
+  }
+  @media screen and (max-width:400px){
+    width: 91.2%;
+    min-height: 80%;
+  }
+  &.add_new_task_dark {
+    background-color: $slate_gray;
+    h3 {
+      color: #fff;
+    }
+  }
+  input {
+    outline: none !important;
+  }
+  p {
+    color: $muted_blue;
+    font-size: 0.8rem;
+  }
+  .inputSection {
+    margin-top: 0.8rem;
+    &.inputSection_dark {
+      input {
+        background-color: $slate_gray;
+        border: 1px solid $muted_blue;
+        color: #fff;
+      }
+      textarea {
+        background-color: $slate_gray;
+        border: 1px solid $muted_blue;
+        color: #fff;
+      }
+    }
+    select {
+      width: 100%;
+      padding: 1rem;
+      background-color: #fff;
+      border: 1px solid $pale_blue;
+    }
+    input {
+      width: 100%;
+      padding: 0.7rem;
+      border-radius: 0.3rem;
+      border: 1px solid $pale_blue;
+      margin-top: 1rem;
+    }
+    .desc_textarea {
+      width: 100%;
+      outline: none;
+      margin-top: 0.7rem;
+      padding: 0.5rem 0.5rem 1rem;
+      border: 1px solid $pale_blue;
+      border-radius: 0.3rem;
+      font-size: 0.8rem;
+      resize: none;
+    }
+    .desc_textarea::placeholder {
+      color: $muted_blue;
+      opacity: 0.3;
+    }
+    .status {
+      margin-top: 0.5rem;
+    }
+  }
+  .subtasks_section {
+    width: 100%;
     display: flex;
-    justify-content: center;
-    align-items: center;
-   
+    flex-direction: column;
+    margin-top: 1.2rem;
+    // border: 1px solid red;
+    input {
+      border-radius: 5px;
+    }
+    &.subtasks_section_dark {
+      input {
+        background-color: $slate_gray;
+        border: 1px solid $muted_blue !important;
+      }
+      select {
+        background-color: $slate_gray;
+        border: 1px solid $muted_blue !important;
+        color:#fff;
+      }
+    }
+    .my_subtasks {
+      margin-top: 0.6rem;
+      div {
+        width: 100%;
+        // border:1px solid blue;
+        margin-top: 0.4rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .xMark {
+          cursor: pointer;
+          color: $muted_blue;
+          font-size: 1rem;
+          font-weight: 800;
+        }
+        input {
+          width: 90%;
+          padding: 0.7rem;
+          border: 1px solid $pale_blue;
+        }
+      }
+    }
+  }
+  .add_new_column,
+  .save_changes {
+    margin-top: 1rem;
+    border-radius: 20px;
+    padding: 0.7rem;
+    border: none;
+    text-transform: capitalize;
+    background-color: $pale_blue;
+    color: $vibrant_indigo;
+    cursor: pointer;
+    &.add_new_column_dark{
+      background-color:#fff;
+    }
+  }
+  .save_changes {
+    background-color: $vibrant_indigo;
+    color: #fff;
+    cursor: pointer;
+  }
 }

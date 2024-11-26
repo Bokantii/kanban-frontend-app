@@ -1,6 +1,6 @@
 import React from 'react'
 import classes from './Modal.module.scss';
-import AddNewTask from '../AddNewTask/AddNewTask';
+// import AddNewTask from '../AddNewTask/AddNewTask';
 import { ModalContext } from '../../store/modal-context';
 import { useContext } from 'react';
 const Modal = ({children}) => {

@@ -5,7 +5,6 @@ import IconBoard from "../Icons/IconBoard";
 const BoardTitle = ({ title, isSelected, onSelect }) => {
   const [isHovered, setIsHovered] = useState(false);
 
-  // const iconBoardColor = isSelected && isHovered ? "#635fc7" : "#828FA3";
   let iconBoardColor;
   if (isSelected && isHovered) {
     iconBoardColor = "#635fc7";
@@ -14,6 +13,7 @@ const BoardTitle = ({ title, isSelected, onSelect }) => {
   } else {
     iconBoardColor = "#828FA3";
   }
+
   const className = isSelected
     ? `${classes.board} ${classes.board_selected}`
     : classes.board;
